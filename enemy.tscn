@@ -276,9 +276,10 @@ graph_offset = Vector2(-46, -107)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animTree", "playerGFX")]
 script = ExtResource("1_4gyqm")
+SPEED = 250.0
 JUMP_VELOCITY = -800.0
 upGrav = 1500.0
-downGrav = 3000.0
+downGrav = 1501.0
 animTree = NodePath("AnimationTree")
 playerGFX = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite")
 
@@ -295,7 +296,7 @@ position = Vector2(0, 76)
 position = Vector2(0, -76)
 
 [node name="PlayerSprite" type="Sprite2D" parent="CenterScaler/ScaleFromFeet/FeetPositionRegulator"]
-modulate = Color(0.611765, 0, 0.733333, 1)
+modulate = Color(0.803922, 0.572549, 0, 1)
 texture_filter = 1
 scale = Vector2(11.7003, 11.7003)
 texture = ExtResource("2_qi2p4")
