@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(97, 151)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 48.5
+
 [sub_resource type="Animation" id="Animation_i3pqv"]
 length = 0.001
 tracks/0/type = "value"
