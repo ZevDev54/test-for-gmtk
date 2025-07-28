@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cece5570cnj5x"]
+[gd_scene load_steps=25 format=3 uid="uid://1ypwetvmttmq"]
 
 [ext_resource type="Script" uid="uid://bosvi4gp6wl82" path="res://player.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://xplt7gdwt1u0" path="res://player.png" id="2_qi2p4"]
@@ -276,9 +276,10 @@ graph_offset = Vector2(-46, -107)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animTree", "playerGFX")]
 script = ExtResource("1_4gyqm")
+SPEED = 9000.0
 JUMP_VELOCITY = -800.0
 upGrav = 1500.0
-downGrav = 3000.0
+downGrav = 4500.0
 animTree = NodePath("AnimationTree")
 playerGFX = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite")
 
