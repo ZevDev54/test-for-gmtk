@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3rdee03y8uqg"]
+[gd_scene load_steps=6 format=3 uid="uid://d3rdee03y8uqg"]
 
 [ext_resource type="PackedScene" uid="uid://dbe8bq61tcbk0" path="res://obstacle.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://civyixgac6r5a" path="res://player.tscn" id="2_vonw3"]
+[ext_resource type="Texture2D" uid="uid://cadthj64u110m" path="res://goofy-ahh/638064125846495504.png" id="3_f2txt"]
+[ext_resource type="Texture2D" uid="uid://bxnjw4yxx2ymu" path="res://goofy-ahh/artworks-fUV47PZ3Rxvk7CKH-13W3qQ-t500x500.jpg" id="4_1ainy"]
+[ext_resource type="Texture2D" uid="uid://b50g5ftcmdywg" path="res://goofy-ahh/avatars-jwS1mg2RXyr8yOzt-zJrP5Q-t1080x1080.jpg" id="5_n6hdu"]
 
 [node name="level" type="Node2D"]
 
@@ -23,3 +26,15 @@ scale = Vector2(6.89317, 7.8483)
 
 [node name="Player" parent="." instance=ExtResource("2_vonw3")]
 position = Vector2(217, 343)
+
+[node name="638064125846495504" type="Sprite2D" parent="."]
+position = Vector2(-382, 824)
+texture = ExtResource("3_f2txt")
+
+[node name="Artworks-fUv47pz3Rxvk7ckh-13w3qQ-t500x500" type="Sprite2D" parent="."]
+position = Vector2(1392, 487)
+texture = ExtResource("4_1ainy")
+
+[node name="Avatars-jwS1Mg2rXyr8yOzt-zJrP5q-t1080x1080" type="Sprite2D" parent="."]
+position = Vector2(-426, -323)
+texture = ExtResource("5_n6hdu")
