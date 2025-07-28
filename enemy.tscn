@@ -1,0 +1,312 @@
+[gd_scene load_steps=25 format=3 uid="uid://1ypwetvmttmq"]
+
+[ext_resource type="Script" uid="uid://bosvi4gp6wl82" path="res://player.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://xplt7gdwt1u0" path="res://player.png" id="2_qi2p4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 49.0
+height = 168.0
+
+[sub_resource type="Animation" id="Animation_i3pqv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterScaler/ScaleFromFeet:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CenterScaler:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hqtel"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterScaler/ScaleFromFeet:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.190014, 0.3, 0.433333),
+"transitions": PackedFloat32Array(0.933034, 0.933034, 0.75786, 0.189465),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.05, 0.95), Vector2(1.05, 0.95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_2hs0m"]
+resource_name = "in_air"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sweqy"]
+resource_name = "jump_start"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterScaler:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.126267, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.24, 0.80389), Vector2(0.862301, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1jxqw"]
+resource_name = "landing"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterScaler/ScaleFromFeet:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 4.28709, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_onrkg"]
+resource_name = "run"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0173967, 0.12259, 0.243375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.187273),
+"transitions": PackedFloat32Array(0.210224, 1.56917),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -17)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterScaler/ScaleFromFeet:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0760055),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.943978, 1.04243)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqtel"]
+_data = {
+&"RESET": SubResource("Animation_i3pqv"),
+&"idle": SubResource("Animation_hqtel"),
+&"in_air": SubResource("Animation_2hs0m"),
+&"jump_start": SubResource("Animation_sweqy"),
+&"landing": SubResource("Animation_1jxqw"),
+&"run": SubResource("Animation_onrkg")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_onrkg"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hqtel"]
+animation = &"in_air"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sweqy"]
+animation = &"jump_start"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2hs0m"]
+animation = &"landing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3pqv"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hqtel"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sweqy"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2hs0m"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_onrkg"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i3pqv"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1jxqw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dw050"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b26j0"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_onrkg"]
+states/Start/position = Vector2(173.6, 56.8)
+states/idle/node = SubResource("AnimationNodeAnimation_onrkg")
+states/idle/position = Vector2(324.4, 56)
+states/in_air/node = SubResource("AnimationNodeAnimation_hqtel")
+states/in_air/position = Vector2(593.44, 56.88)
+states/jump_start/node = SubResource("AnimationNodeAnimation_sweqy")
+states/jump_start/position = Vector2(594.4, 176.4)
+states/landing/node = SubResource("AnimationNodeAnimation_2hs0m")
+states/landing/position = Vector2(416, -49.4)
+states/run/node = SubResource("AnimationNodeAnimation_i3pqv")
+states/run/position = Vector2(314, 203.2)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_hqtel"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_sweqy"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_2hs0m"), "idle", "jump_start", SubResource("AnimationNodeStateMachineTransition_onrkg"), "run", "jump_start", SubResource("AnimationNodeStateMachineTransition_i3pqv"), "jump_start", "in_air", SubResource("AnimationNodeStateMachineTransition_1jxqw"), "in_air", "landing", SubResource("AnimationNodeStateMachineTransition_dw050"), "landing", "idle", SubResource("AnimationNodeStateMachineTransition_b26j0")]
+graph_offset = Vector2(-46, -107)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animTree", "playerGFX")]
+script = ExtResource("1_4gyqm")
+JUMP_VELOCITY = -800.0
+upGrav = 1500.0
+downGrav = 3000.0
+animTree = NodePath("AnimationTree")
+playerGFX = NodePath("CenterScaler/ScaleFromFeet/FeetPositionRegulator/PlayerSprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="CenterScaler" type="Node2D" parent="."]
+
+[node name="ScaleFromFeet" type="Node2D" parent="CenterScaler"]
+position = Vector2(0, 76)
+
+[node name="FeetPositionRegulator" type="Node2D" parent="CenterScaler/ScaleFromFeet"]
+position = Vector2(0, -76)
+
+[node name="PlayerSprite" type="Sprite2D" parent="CenterScaler/ScaleFromFeet/FeetPositionRegulator"]
+modulate = Color(1, 0, 0.0166664, 1)
+texture_filter = 1
+scale = Vector2(11.7003, 11.7003)
+texture = ExtResource("2_qi2p4")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hqtel")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_onrkg")
+anim_player = NodePath("../AnimationPlayer")
