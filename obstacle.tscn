@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbe8bq61tcbk0"]
+
+[ext_resource type="Texture2D" uid="uid://bvxsrs16tl4st" path="res://AsteroidTexture.png" id="1_sl1jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aubd6"]
+
+[node name="obstacle" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aubd6")
+
+[node name="AsteroidTexture" type="Sprite2D" parent="."]
+scale = Vector2(0.0185185, 0.0185185)
+texture = ExtResource("1_sl1jc")

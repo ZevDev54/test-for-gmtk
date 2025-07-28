@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3rdee03y8uqg"]
+
+[ext_resource type="PackedScene" uid="uid://dbe8bq61tcbk0" path="res://obstacle.tscn" id="1_u52ul"]
+[ext_resource type="PackedScene" uid="uid://civyixgac6r5a" path="res://player.tscn" id="2_vonw3"]
+
+[node name="level" type="Node2D"]
+
+[node name="obstacle" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(124, 571)
+scale = Vector2(6.89317, 7.8483)
+
+[node name="obstacle2" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(268, 573)
+scale = Vector2(6.89317, 7.8483)
+
+[node name="obstacle3" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(421, 557)
+scale = Vector2(6.89317, 7.8483)
+
+[node name="obstacle4" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(602, 555)
+scale = Vector2(6.89317, 7.8483)
+
+[node name="Player" parent="." instance=ExtResource("2_vonw3")]
+position = Vector2(217, 343)
